@@ -1,0 +1,11 @@
+node_modules/
+bun.lockb
+# Everything under data/ is local — DB, WAL sidecars, backups, and the
+data/
+# User-uploaded profile photos: never commit these (PII).
+assets/uploads/
+out/
+web/dist/
+.DS_Store
+*.log
+.oxlintcache

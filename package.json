@@ -1,0 +1,54 @@
+{
+  "name": "magicv",
+  "version": "0.1.0",
+  "description": "Local CV tailoring tool — paste a job description, get a tailored multilingual PDF. SQLite + Bun + Hono + Svelte + Playwright + Claude CLI.",
+  "license": "MIT",
+  "author": "Lukas Neumann",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lksnmnn/magicv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lksnmnn/magicv/issues"
+  },
+  "homepage": "https://github.com/lksnmnn/magicv#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n srv,web -c blue,green \"bun run server\" \"bun run web\"",
+    "server": "bun --watch server/index.ts",
+    "web": "vite --config web/vite.config.ts",
+    "build": "vite build --config web/vite.config.ts",
+    "start": "MAGICV_SERVE_STATIC=1 bun server/index.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:studio": "drizzle-kit studio",
+    "typecheck": "tsc --noEmit && svelte-check --workspace web",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "knip": "knip",
+    "check": "bun run typecheck && bun run lint && bun run format:check && bun run knip",
+    "setup": "playwright install chromium"
+  },
+  "dependencies": {
+    "@hono/zod-validator": "^0.8.0",
+    "drizzle-orm": "^0.45.2",
+    "hono": "^4.6.14",
+    "playwright": "^1.60.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@types/bun": "^1.1.14",
+    "better-sqlite3": "^12.10.0",
+    "concurrently": "^9.1.2",
+    "drizzle-kit": "^0.31.10",
+    "knip": "^6.13.1",
+    "oxlint": "^1.64.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-svelte": "^3.5.2",
+    "svelte": "^5.16.1",
+    "svelte-check": "^4.1.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules
+web/dist
+out
+data
+bun.lock
+LICENSE
+assets
