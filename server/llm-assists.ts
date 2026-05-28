@@ -36,7 +36,7 @@ export async function translate(args: {
   const prompt = `Translate the following ${fromName} text into ${toName}, in a tone suited to a professional CV.
 
 Rules:
-- Preserve product names, company names, framework names, and tech jargon verbatim (e.g. "Mercedes me media", "Angular", "Typo3", "GraphQL").
+- Preserve product names, company names, framework names, and tech jargon verbatim.
 - Keep numbers and units identical (e.g. "20 %", "100.000 Zuschauer" → "100,000 viewers").
 - Match the formality and verb voice of the source.
 - Do not add commentary. Do not wrap in quotes.
